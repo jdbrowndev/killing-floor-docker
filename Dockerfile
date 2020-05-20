@@ -31,8 +31,9 @@ COPY --from=builder --chown=steam:steam /home/steam/servers/kf /home/steam/serve
 # Add scripts needed for entry point
 WORKDIR /home/steam/servers/kf/System
 # Copy Maps and Systems for customized mutators
-COPY Maps /home/steam/servers/kf/
-COPY System /home/steam/servers/kf/
+COPY Maps /home/steam/servers/kf/Maps
+COPY System /home/steam/servers/kf/System
+RUN pwd && ls
 # Initialize KF.ini
 COPY KillingFloor.ini KillingFloor.ini
 # Needed scripts - DO NOT REMOVE
