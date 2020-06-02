@@ -69,12 +69,8 @@ function load_config() {
     sed -i "s,RedirectToURL=,RedirectToURL=$KF_REDIRECT,g" KillingFloor.ini
     
     ############# MUTATORS RELATED REPLACEMENTS #############
-    # If you have MaxPlayers or ServerColor enabled, uncomment the 2 below commands
-    # And don't forget to edit the config of these 2 mutators in the /System directory
-    sed -i '/ServerActors=UWeb.WebServer/a ServerActors=ServerColor.ServerColorActor' KillingFloor.ini
+    # Make sure to pre-configure your mutators in /System
     sed -i '/ServerActors=UWeb.WebServer/a ServerActors=KFMaxPlayers.KFMaxPlayers' KillingFloor.ini
-    # If you are using MapVote Handler Fix, uncomment the below command, make sure you already have the pre-configured
-    # map votings in the /System
     sed -i "s/VotingHandlerType=xVoting.xVotingHandler/VotingHandlerType=KFMapVoteV2.KFVotingHandler/g" KillingFloor.ini
 }
 
